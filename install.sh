@@ -63,4 +63,5 @@ echo
 nerdfetch
 echo
 echo "You can reboot now if you want and have fun :)"
+echo "Remember, to start bspwm type `startx` inside your tty!"
 echo
