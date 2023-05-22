@@ -44,7 +44,7 @@ echo "# Installing configs #"
 echo "######################"
 echo
 cd ~/git && git clone https://github.com/plastic-bottleneck/bashrc && cd bashrc && chmod +x install-arch.sh && ./install-arch.sh && cd
-cd $HOME/bspwm-rice/src && cp -r git-rofi $HOME/git && mv $HOME/git/git-rofi $HOME/git/rofi && cp -r rofi $HOME/.config && cp -r alacritty $HOME/.config && cp -r bspwm $HOME/.config/ && cp -r dunst $HOME/.config/ && cp -r picom $HOME/.config/ && cp -r polybar $HOME/.config/ && cp -r sxhkd $HOME/.config/ && cp xinitrc $HOME/.xinitrc && cp Xresources $HOME/.Xresources && cp gtk-3.0/settings.ini $HOME/.config/gtk-3.0 && cp -r wal $HOME/pix
+cd $HOME/bspwm-rice/src && cp -r git-rofi $HOME/git && mv $HOME/git/git-rofi $HOME/git/rofi && cp -r rofi $HOME/.config && cp -r alacritty $HOME/.config && cp -r bspwm $HOME/.config/ && cp -r dunst $HOME/.config/ && cp -r picom $HOME/.config/ && cp -r polybar $HOME/.config/ && cp -r sxhkd $HOME/.config/ && cp xinitrc $HOME/.xinitrc && cp Xresources $HOME/.Xresources && cp gtk-3.0/settings.ini $HOME/.config/gtk-3.0 && cp -r wal $HOME/pix && sudo cp pacman.conf /etc/pacman.conf
 echo
 echo "Done!"
 echo
