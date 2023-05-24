@@ -32,10 +32,11 @@ echo
 
 cd $HOME && mkdir pix doc dow         # making home directories for files etc 
 
-yay -S enchant mythes-en ttf-liberation hunspell-en_US ttf-bitstream-vera pkgstats adobe-source-sans-pro-fonts gst-plugins-good ttf-droid ttf-dejavu aspell-en icedtea-web gst-libav ttf-ubuntu-font-family ttf-anonymous-pro jre8-openjdk ttf-gentium languagetool libmythes bspwm xorg xorg-server xorg-xinit sxhkd htop thunar alacritty feh picom polybar vim vi ed noto-fonts noto-fonts-emoji flameshot mpv links ttf-font-awesome pipewire lib32-pipewire pipewire-audio pipewire-alsa alsa-utils alsa-plugins pipewire-pulseaudio firefox arandr lf ttf-jetbrains-mono-nerd nerdfetch ufw python python3 python-pip papirus-folders-catppuccin-git catppuccin-cursors-mocha catppuccin-cursors-macchiato catppuccin-cursors-frappe catppuccin-cursors-latte catppuccin-gtk-theme-mocha catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-frappe catppuccin-gtk-theme-latte gvfs tumbler ffmpegthumbnailer thunar-volman thunar-shares-plugin wget dunst
+yay -S lib32-pipewire enchant mythes-en ttf-liberation hunspell-en_US ttf-bitstream-vera man-db wireplumber pipewire-jack pkgstats adobe-source-sans-pro-fonts gst-plugins-good ttf-droid ttf-dejavu aspell-en icedtea-web gst-libav ttf-ubuntu-font-family ttf-anonymous-pro jre8-openjdk languagetool libmythes bspwm xorg xorg-server xorg-xinit sxhkd htop thunar alacritty feh picom polybar vim vi ed noto-fonts noto-fonts-emoji flameshot mpv links ttf-font-awesome pipewire lib32-pipewire-jack pipewire-audio pipewire-alsa alsa-utils alsa-plugins pipewire-pulse firefox arandr lf ttf-jetbrains-mono-nerd nerdfetch ufw python python3 python-pip papirus-folders-catppuccin-git catppuccin-cursors-mocha catppuccin-cursors-macchiato catppuccin-cursors-frappe catppuccin-cursors-latte catppuccin-gtk-theme-mocha catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-frappe catppuccin-gtk-theme-latte gvfs tumbler ffmpegthumbnailer thunar-volman thunar-shares-plugin wget dunst
 
-sudo ufw enable                       # firewall	- ufw : enable
-sudo systemctl enable ufw.service     # firewall	- ufw
+sudo ufw enable                               # firewall	- ufw : enable
+sudo systemctl enable ufw.service             # firewall	- ufw
+sudo systemctl enable pipewire-pulse.service  # audio - pipewire
 
 echo
 echo "Done!"
