@@ -64,6 +64,7 @@ cp Xresources $HOME/.Xresources                                                 
 sudo rm $HOME/.config/gtk-3-0/settings.ini && cp gtk-3.0/settings.ini $HOME/.config/gtk-3.0/    # gtk theme
 cp -r wal $HOME/pix/                                                                            # wallpaper
 sudo cp pacman.conf /etc/pacman.conf                                                            # pacman config
+sudo cp -r ComicMono /usr/share/fonts/                                                          # installing font (comic mono)
 
 echo
 echo "Done!"
