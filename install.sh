@@ -1,11 +1,11 @@
 #!/bin/bash
+clear
 
 # // welcome to this little install script for my bspwm rice! //
-echo
-echo "################################################"
-echo "# Welcome to Paul's BSPWM Rice for Arch Linux! #"
-echo "################################################"
-echo
+cat $HOME/bspwm-rice/msg.txt
+
+echo && echo
+echo "Welcome to Paul's BSPWM Rice for Arch Linux!"
 echo "Feel free to modify it for your likes!"
 echo
 
@@ -16,8 +16,9 @@ echo "# Installing yay #"
 echo "##################"
 echo
 
-sudo pacman -Syu                                                                                                # updateing the system
-mkdir $HOME/git && cd $HOME/git && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd   # installing yay
+sudo pacman -Syu										# updateing the system
+mkdir $HOME/git
+cd $HOME/git && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd	# installing yay
 
 echo
 echo "Done!"
@@ -30,13 +31,13 @@ echo "# Installing software and fonts #"
 echo "#################################"
 echo
 
-cd $HOME && mkdir pix doc dow         # making home directories for files etc 
+cd $HOME 
+mkdir pix doc dow				# making home directories for files etc 
 
-yay -S lib32-pipewire enchant rofi mythes-en ttf-liberation hunspell-en_US ttf-bitstream-vera man-db wireplumber pipewire-jack pkgstats adobe-source-sans-pro-fonts gst-plugins-good ttf-droid ttf-dejavu aspell-en icedtea-web gst-libav ttf-ubuntu-font-family ttf-anonymous-pro jre8-openjdk languagetool libmythes bspwm xorg xorg-server xorg-xinit sxhkd htop thunar alacritty feh picom polybar vim vi ed noto-fonts noto-fonts-emoji flameshot mpv links ttf-font-awesome pipewire lib32-pipewire-jack pipewire-audio pipewire-alsa alsa-utils alsa-plugins pipewire-pulse firefox arandr lf ttf-jetbrains-mono-nerd nerdfetch ufw python python3 python-pip papirus-folders-catppuccin-git catppuccin-cursors-mocha catppuccin-cursors-macchiato catppuccin-cursors-frappe catppuccin-cursors-latte catppuccin-gtk-theme-mocha catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-frappe catppuccin-gtk-theme-latte gvfs tumbler ffmpegthumbnailer thunar-volman thunar-shares-plugin wget dunst
+yay -S lib32-pipewire enchant rofi pulseaudio mythes-en ttf-liberation hunspell-en_US ttf-bitstream-vera man-db wireplumber pipewire-jack pkgstats adobe-source-sans-pro-fonts gst-plugins-good ttf-droid ttf-dejavu aspell-en icedtea-web gst-libav ttf-ubuntu-font-family ttf-anonymous-pro jre8-openjdk languagetool libmythes bspwm xorg xorg-server xorg-xinit sxhkd htop thunar alacritty feh picom polybar vim vi ed noto-fonts noto-fonts-emoji flameshot mpv links ttf-font-awesome pipewire lib32-pipewire-jack pipewire-audio pipewire-alsa alsa-utils alsa-plugins firefox arandr lf ttf-jetbrains-mono-nerd nerdfetch ufw python python3 python-pip papirus-folders-catppuccin-git catppuccin-cursors-mocha catppuccin-cursors-macchiato catppuccin-cursors-frappe catppuccin-cursors-latte catppuccin-gtk-theme-mocha catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-frappe catppuccin-gtk-theme-latte gvfs tumbler ffmpegthumbnailer thunar-volman thunar-shares-plugin wget dunst
 
-sudo ufw enable                               # firewall	- ufw : enable
-sudo systemctl enable ufw.service             # firewall	- ufw
-sudo systemctl enable pipewire-pulse.service  # audio - pipewire
+sudo ufw enable					# firewall	- ufw : enable
+sudo systemctl enable ufw.service		# firewall	- ufw
 
 echo
 echo "Done!"
@@ -49,11 +50,14 @@ echo "# Installing configs #"
 echo "######################"
 echo
 
-cd ~/git && git clone https://github.com/plastic-bottleneck/bashrc && cd bashrc && chmod +x install-arch.sh && bash install-arch.sh && cd # installing my custom bashrc config
+cd $HOME/git
+git clone https://github.com/plastic-bottleneck/bashrc						# cloning into my bashrc git repo
+cd bashrc 
+chmod +x install-arch.sh && bash install-arch.sh && cd						# installing my bashrc config
 
 cd $HOME/bspwm-rice/src                                                                         # moving into the source folder to get the configs
-
 cp -r rofi $HOME/git/                                                                           # rofi (launcher)
+chmod +x $HOME/git/rofi/basic/install.sh && bash $HOME/git/rofi/basic/install.sh		# rofi theme (install)
 mkdir $HOME/.config/rofi/ && cp -r rofi-config/* $HOME/.config/rofi/                            # rofi config (launcher config)
 cp -r alacritty $HOME/.config && cp -r bspwm $HOME/.config/                                     # alacritty config (terminal)
 cp -r dunst $HOME/.config/                                                                      # dunst config (for notifications)
@@ -78,17 +82,21 @@ echo "# Finishing #"
 echo "#############"
 echo
 
-yay && yay -Scc     # cleaning up yay cache
+yay && yay -Scc					# cleaning up yay cache
 
-mv bspwm-rice git   # moving this dir into ~/git/
+sudo chmod 755 $HOME/.config/bspwm/bspwmrc	# making the bspwm config file useable (755)
+sudo chmod 644 $HOME/.config/sxhkd/sxhkdrc	# making the sxhkd config file useable (644)
 
 echo
 echo "Done!"
 echo
 
-nerdfetch           # system info
+nerdfetch					# print system info
 
 echo
 echo "You can reboot now if you want and have fun :)"
-echo "Remember, to start bspwm type `startx` inside your tty!"
+echo "Remember, to start bspwm, type startx inside your tty!"
+echo
+echo "Leave a star on my GitHub: https://github.com/plastic-bottleneck/"
+echo "Or visit my website at: http://plastic-bottleneck.42web.io/"
 echo
