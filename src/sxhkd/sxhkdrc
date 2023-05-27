@@ -26,6 +26,12 @@ super + e
 super + @space
 	flameshot gui
 
+# backlight
+super + ctrl + Up
+	backlight_control +10
+super + ctrl + Down
+	backlight_control -10 
+
 #
 # bspwm hotkeys
 #
