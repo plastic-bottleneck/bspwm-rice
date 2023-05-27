@@ -19,13 +19,17 @@ chmod +x install.sh
 7. Reboot your system and enjoy!
 
 ## Keybinds
-super + d | opens your menu  
-super + e | opens thunar  
-super + w | opens firefox  
-super + q | closes programs  
 
-super + enter | opens your terminal  
-super + space | takes a screenshot  
+|keybind|what it does|
+|---|---|
+|super + d|opens your menu|
+|super + e|opens thunar|
+|super + w|opens firefox|
+|super + q|closes programs|
+|super + enter|opens your terminal|
+|super + space|takes a screenshot|
+|super + up|uppers your screen brightness|
+|super + down|lowers your screen brightness|
 
 ---
 
